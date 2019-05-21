@@ -1,0 +1,10 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<main>
+    <h1>My Thoughts</h1>
+    <button (click)="displayForm()" *ngIf="visible">New Thoughts</button>
+    <post-form *ngIf="!visible" (onSubmit)="addPost($event)"></post-form>
+    <section>
+        <post *ngFor="let post of postList; index as i" [post]="post" (onRemovePost)="removePost(i)"></post>
+        <!-- <post [postList]="postList" (onRemovePost)="removePost($event)"></post> -->
+    </section>
+</main>
