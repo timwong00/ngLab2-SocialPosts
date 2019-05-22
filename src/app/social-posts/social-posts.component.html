@@ -2,9 +2,9 @@
 <main>
     <h1>My Thoughts</h1>
     <button (click)="displayForm()" *ngIf="visible">New Thoughts</button>
-    <post-form *ngIf="!visible" (onSubmit)="addPost($event)"></post-form>
+    <post-form *ngIf="!visible" (onAddPost)="addPost($event)" (onDisplayForm)="displayForm()"></post-form>
     <section>
-        <post *ngFor="let post of postList; index as i" [post]="post" (onRemovePost)="removePost(i)"></post>
+        <post *ngFor="let post of postList; index as i" [post]="post" (onRemovePost)="removePost($event)"></post>
         <!-- <post [postList]="postList" (onRemovePost)="removePost($event)"></post> -->
     </section>
 </main>

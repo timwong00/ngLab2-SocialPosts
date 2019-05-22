@@ -25,7 +25,7 @@ export class SocialPostsComponent implements OnInit {
   constructor() { }
 
   addPost(form): void {
-    this.postList.push(form.value);
+    this.postList.unshift(form.value);
   }
 
   removePost(index: number): void {

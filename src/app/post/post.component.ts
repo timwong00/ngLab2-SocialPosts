@@ -9,14 +9,15 @@ import { Posts } from '../posts';
 export class PostComponent implements OnInit {
 
   @Input() post: Posts[];
+  @Input() index: number;
   @Output() onRemovePost = new EventEmitter<any>();
 
   constructor() { }
 
   like: number = 0;
 
-  removePost() {
-    this.onRemovePost.emit();
+  removePost(index) {
+    this.onRemovePost.emit(index);
   }
 
   likeVote(): void {

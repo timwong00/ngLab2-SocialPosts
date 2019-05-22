@@ -8,15 +8,20 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class PostFormComponent implements OnInit {
 
 
-  @Output() onSubmit = new EventEmitter<any>();
+  @Output() onAddPost = new EventEmitter<any>();
+  @Output() onDisplayForm = new EventEmitter<any>();
 
   constructor() { }
 
   addPost(form): void {
     // console.log(form);
-    this.onSubmit.emit(form);
+    this.onAddPost.emit(form);
+    this.displayForm();
   }
 
+  displayForm(): void {
+    this.onDisplayForm.emit();
+  }
 
   ngOnInit() {
   }

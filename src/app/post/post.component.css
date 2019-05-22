@@ -29,3 +29,7 @@ div {
     transform: translateX(-125%);
     font-size: 24px;
 }
+
+.like_btn{
+    color: rgb(3, 169, 244);
+}
